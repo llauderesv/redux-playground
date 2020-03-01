@@ -44,6 +44,8 @@ export function* takeOneAtMost() {
   // you can used this to queue specific action in the store
   // Queue's all dispatch action in the middleware
   // So we want to queue all non-processed actions, and once we're done with processing the current request, we get the next message from the queue.
+  // actionChannel can buffer incoming messages if the saga is not yet ready to take them (eg: blocked on an API call).
+  
   const chan = yield actionChannel('COUNTER/INC');
   while (true) {
     const {payload} = yield take(chan);
