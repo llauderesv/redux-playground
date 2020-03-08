@@ -10,8 +10,4 @@ const useLogOnMount = action => {
     // Unmounted component log actions
     return () => {};
   }, []); // eslint-disable-line
-
-  // mount component dispatches
-
-  // unmount component dispatches
 };
